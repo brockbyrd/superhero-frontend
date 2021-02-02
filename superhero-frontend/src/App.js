@@ -7,14 +7,16 @@ export default class App extends Component {
       characters: []
     }
   }
-  componentDidMount = () => {
-    fetch('http://localhost:3000/sports')
+  componentDidMount() {
+    fetch('http://localhost:5000/characters')
     .then(response => response.json())
-    .then(data => console.log(data))
-  }
+    .then(data => this.setState({ characters: data }))
+    }
+
   render() {
     return(
       <div>
+        {this.state.characters.map((char) => <h4 key={char.id}>{char.name}</h4> )}
       </div>
     )
   }
