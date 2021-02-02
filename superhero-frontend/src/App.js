@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SplitPane from 'react-split-pane';
 
 class App extends Component {
   constructor(props) {
@@ -16,12 +15,16 @@ class App extends Component {
 
   render() {
     return(
-      <SplitPane split="vertical" minSize={50} defaultSize={100}>
-        <div>Good Guys</div>
-        <div>Bad Guys</div>
-      </SplitPane>
+      <div class="parent">
+
+        <div class="item" style="background: url(https://www.comicbasics.com/wp-content/uploads/2020/08/The-Top-10-Greatest-Superheroes-Without-Superpowers-In-Comics-Today.jpg) center center no-repeat; background-size: cover;"></div>
+
+        <div class="item" style="background: url(https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/11/Meanest-Supervillains-Of-All-Time.jpg) center center no-repeat; background-size: cover;"></div>
+
+      </div>
     )
   }
 }
+
 
 export default App;
