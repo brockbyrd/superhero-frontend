@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import SplitPane from 'react-split-pane';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,9 +16,12 @@ export default class App extends Component {
 
   render() {
     return(
-      <div>
-        {this.state.characters.map((char) => <h4 key={char.id}>{char.name}</h4> )}
-      </div>
+      <SplitPane split="vertical" minSize={50} defaultSize={100}>
+        <div>Good Guys</div>
+        <div>Bad Guys</div>
+      </SplitPane>
     )
   }
 }
+
+export default App;
