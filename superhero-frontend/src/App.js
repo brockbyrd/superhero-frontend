@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
+import { fetchCharacters } from './actions/characterActions'
 
 class App extends Component {
   constructor(props) {
@@ -10,11 +11,10 @@ class App extends Component {
       villains: []
     }
   }
+
   componentDidMount() {
-    fetch('http://localhost:5000/characters')
-    .then(response => response.json())
-    .then(data => this.setState({ characters: data }))
-    }
+    this.props.fetchCharacters();
+  }
 
     filterGood = () => {
       let heroes = this.state.characters
@@ -46,5 +46,18 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    characters: state.characters,
+    loading: state.loading
+  }
+}
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCharacters: () => dispatch(fetchCharacters())
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
