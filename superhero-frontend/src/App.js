@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css'
 import { fetchCharacters } from './actions/characterActions'
 import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   // constructor(props) {
@@ -35,10 +36,14 @@ class App extends Component {
   render() {
     return(
       <div className="parent">
+        <Route render={({ history }) => (
+          <div className="leftHalf" onClick={() => history.push('/superheroes')}><img src="https://www.wallpapertip.com/wmimgs/35-357728_all-superheroes-wallpaper.jpg" alt="" onClick={this.filterGood} /></div>
+        )
+      } />
+        <Route render={({ history }) => (
+          <div className="rightHalf" onClick={() => history.push('/villains')} ><img src="https://wallpaperaccess.com/full/783564.jpg" alt="" onClick={this.filterEvil} /></div>
+        )} />
 
-        <div className="leftHalf" onClick={this.filterGood}><img src="https://www.wallpapertip.com/wmimgs/35-357728_all-superheroes-wallpaper.jpg" alt="" /></div>
-
-        <div className="rightHalf" onClick={this.filterEvil}><img src="https://wallpaperaccess.com/full/783564.jpg" alt="" /></div>
 
       </div>
 
