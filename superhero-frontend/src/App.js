@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import './App.css'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      characters: []
+      characters: [],
+      heroes: [],
+      villains: []
     }
   }
   componentDidMount() {
@@ -13,13 +16,29 @@ class App extends Component {
     .then(data => this.setState({ characters: data }))
     }
 
+    filterGood = () => {
+      let heroes = this.state.characters
+      heroes = heroes.filter((char) =>
+        char.alignment === 'good'
+      )
+      console.log(heroes)
+    }
+
+    filterEvil = () => {
+      let villains = this.state.characters
+      villains = villains.filter((char) =>
+      char.alignment === 'bad'
+      )
+      console.log(villains)
+    }
+
   render() {
     return(
-      <div class="parent">
+      <div className="parent">
 
-        <div class="item" style="background: url(https://www.comicbasics.com/wp-content/uploads/2020/08/The-Top-10-Greatest-Superheroes-Without-Superpowers-In-Comics-Today.jpg) center center no-repeat; background-size: cover;"></div>
+        <div className="leftHalf" onClick={this.filterGood} style={{ backgroundImage: `url("https://www.comicbasics.com/wp-content/uploads/2020/08/The-Top-10-Greatest-Superheroes-Without-Superpowers-In-Comics-Today.jpg")`}}></div>
 
-        <div class="item" style="background: url(https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/11/Meanest-Supervillains-Of-All-Time.jpg) center center no-repeat; background-size: cover;"></div>
+        <div className="rightHalf" onClick={this.filterEvil} style={{ backgroundImage: `url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/11/Meanest-Supervillains-Of-All-Time.jpg")`}}></div>
 
       </div>
     )
