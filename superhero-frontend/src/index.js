@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Provider from 'react-redux';
-import createStore from './createStore';
+import { createStore } from 'redux';
+import characterReducer from './reducers/createStore';
 
-const store = createStore();
+const store = createStore(characterReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App store={store} />
   </Provider>,
   document.getElementById('root')
 );
