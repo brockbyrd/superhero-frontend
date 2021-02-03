@@ -11,7 +11,7 @@ const characterReducer = (state = { characters: [], loading: false }, action) =>
         case "ADD_CHARACTERS":
             return {
                 ...state,
-                characters: action.characters,
+                characters: action.response,
                 loading: false
             }
 
