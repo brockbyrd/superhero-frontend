@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import './App.css'
 import { fetchCharacters } from './actions/characterActions'
 import { connect } from 'react-redux'
-import { Route } from 'react-router-dom'
+import Homepage from './components/Homepage'
+import Superhero from ' ./components/Superhero'
+import Villain from './components/Villain'
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     characters: []
-  //   }
-  // }
 
   componentDidMount() {
     this.props.fetchCharacters();
@@ -35,18 +31,9 @@ class App extends Component {
 
   render() {
     return(
-      <div className="parent">
-        <Route render={({ history }) => (
-          <div className="leftHalf" onClick={() => history.push('/superheroes')}><img src="https://www.wallpapertip.com/wmimgs/35-357728_all-superheroes-wallpaper.jpg" alt="" onClick={this.filterGood} /></div>
-        )
-      } />
-        <Route render={({ history }) => (
-          <div className="rightHalf" onClick={() => history.push('/villains')} ><img src="https://wallpaperaccess.com/full/783564.jpg" alt="" onClick={this.filterEvil} /></div>
-        )} />
-
-
-      </div>
-
+      <Homepage characters={this.props.characters} filterEvil={this.filterEvil} filterGood={this.filterGood} />,
+      <Superhero />,
+      <Villain />
     )
   }
 }
