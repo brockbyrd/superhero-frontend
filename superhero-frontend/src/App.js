@@ -8,7 +8,6 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchCharacters();
-    console.log(this.props.characters)
   }
 
     filterGood = () => {
@@ -16,7 +15,7 @@ class App extends Component {
       heroes = heroes.filter((char) =>
         char.alignment === 'good'
       )
-      console.log(heroes)
+      this.setState({ characters: heroes })
     }
 
     filterEvil = () => {
@@ -24,7 +23,7 @@ class App extends Component {
       villains = villains.filter((char) =>
       char.alignment === 'bad'
       )
-      console.log(villains)
+      this.setState({ characters: villains })
     }
 
   render() {
