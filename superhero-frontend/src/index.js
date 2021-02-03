@@ -7,7 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import characterReducer from './reducers/characterReducer';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Villain from './components/Villian'
+import Villain from './components/Villain'
 import Superhero from './components/Superhero'
 
 const store = createStore(characterReducer, applyMiddleware(thunk));
