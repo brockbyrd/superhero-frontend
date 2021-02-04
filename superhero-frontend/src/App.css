@@ -65,7 +65,12 @@
   max-height: 100%;
 }
 
-.cards {
+.flex-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cards {
   flex-direction: row;
 }

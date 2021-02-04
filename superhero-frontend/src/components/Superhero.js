@@ -8,7 +8,7 @@ class Superhero extends Component {
             <div className="flex-container">
 				{this.props.heroes.map((hero, index) =>
 				<div className="cards">
-					<Card key={index} style={{ width: '18rem' }}>
+					<Card key={index} style={{ width: '14rem' }}>
 						<Card.Img variant="top" src={hero.image1} />
 						<Card.Body>
 						<Card.Title>{hero.name}</Card.Title>
