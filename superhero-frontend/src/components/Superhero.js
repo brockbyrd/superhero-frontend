@@ -38,7 +38,7 @@ class Superhero extends Component {
 							</Card.Text>
 						</Card.Body>
 					</Card>
-					<Card key={index} style={{ width: '14rem' }}>
+					<Card class="back" key={index} style={{ width: '14rem' }}>
 						<Card.Body>
 						<Card.Title>{hero.fullName}</Card.Title>
 						<Card.Text>

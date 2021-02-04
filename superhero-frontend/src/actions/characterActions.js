@@ -6,4 +6,3 @@ export const fetchCharacters = () => {
             .then(data => { dispatch({ type: "ADD_CHARACTERS", characters: data })})
     }
 }
-

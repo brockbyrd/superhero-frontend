@@ -43,7 +43,6 @@ class App extends Component {
         <Route path='/superheroes' render={() => ( <Superhero heroes={this.state.heroes} />)} />
         <Route path='/villains' render={() => ( <Villain villains={this.state.villains} />)}/>
       </div>
-
     )
   }
 }

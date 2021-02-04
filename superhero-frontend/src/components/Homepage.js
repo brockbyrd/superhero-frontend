@@ -14,7 +14,7 @@ class Homepage extends Component {
                 <Route render={({ history }) => (
                 <div className="rightHalf" onClick={() => history.push('/villains')} ><img className="homepage" src="https://wallpaperaccess.com/full/783564.jpg" alt="" onClick={this.props.filterEvil} /></div>
                 )} />
-          </div>
+            </div>
 		)
 	}
 }
