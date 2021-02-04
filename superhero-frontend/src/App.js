@@ -3,8 +3,18 @@ import './App.css'
 import { fetchCharacters } from './actions/characterActions'
 import { connect } from 'react-redux'
 import Homepage from './components/Homepage'
+import Superhero from './components/Superhero'
+import Villain from './components/Villain'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      heroes: [],
+      villains: []
+    }
+  }
 
   componentDidMount() {
     this.props.fetchCharacters();
@@ -15,7 +25,7 @@ class App extends Component {
       heroes = heroes.filter((char) =>
         char.alignment === 'good'
       )
-      this.setState({ characters: heroes })
+      this.setState({ heroes: heroes })
     }
 
     filterEvil = () => {
@@ -23,12 +33,17 @@ class App extends Component {
       villains = villains.filter((char) =>
       char.alignment === 'bad'
       )
-      this.setState({ characters: villains })
+      this.setState({ villains: villains })
     }
 
   render() {
     return(
-      <Homepage characters={this.props.characters} filterEvil={this.filterEvil} filterGood={this.filterGood} />
+      <div>
+        <Route exact path='/' render={() => ( <Homepage characters={this.props.characters} filterEvil={this.filterEvil} filterGood={this.filterGood} />)} />
+        <Route path='/superheroes' render={() => ( <Superhero heroes={this.state.heroes} />)} />
+        <Route path='/villains' render={() => ( <Villain villains={this.state.villains} />)}/>
+      </div>
+
     )
   }
 }
