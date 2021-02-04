@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import '../App.css'
 
 class Homepage extends Component {
 
 	render(){
-		console.log(this.props.characters)
 		return(
             <div className="parent">
                 <Route render={({ history }) => (
