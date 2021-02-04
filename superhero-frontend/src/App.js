@@ -3,8 +3,8 @@ import './App.css'
 import { fetchCharacters } from './actions/characterActions'
 import { connect } from 'react-redux'
 import Homepage from './components/Homepage'
-import Superhero from './components/Superhero'
-import Villain from './components/Villain'
+import Superhero from './components/Superheros/SuperheroContainer'
+import Villain from './components/Villains/VillainContainer'
 import { Route } from 'react-router-dom'
 
 class App extends Component {
