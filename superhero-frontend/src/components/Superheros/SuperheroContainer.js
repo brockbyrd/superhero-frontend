@@ -7,11 +7,9 @@ class SuperheroContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			// isFlipped: false,
 			visible: 15,
 			error: false
 		}
-		// this.handleClick = this.handleClick.bind(this);
 		this.loadMore = this.loadMore.bind(this);
 	}
 
