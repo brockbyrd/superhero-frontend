@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import ReactCardFlip from 'react-card-flip'
-import { SuperheroFront } from './SuperheroFront'
-import { SuperheroBack } from './SuperheroBack'
 import BootstrapNavbar from '../Navbar'
+import Superhero from './Superhero'
 
-class Superhero extends Component {
+
+class SuperheroContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isFlipped: false,
+			// isFlipped: false,
 			visible: 15,
 			error: false
 		}
-		this.handleClick = this.handleClick.bind(this);
+		// this.handleClick = this.handleClick.bind(this);
 		this.loadMore = this.loadMore.bind(this);
 	}
 
@@ -22,24 +21,17 @@ class Superhero extends Component {
 		})
 	}
 
-	handleClick = (e) => {
-		e.preventDefault();
-		this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-	}
+	// handleClick = (e) => {
+	// 	e.preventDefault();
+	// 	this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+	// }
 
 	render(){
 		return(
 			<>
 			<BootstrapNavbar />
             <div className="flex-container">
-				{this.props.heroes.slice(0, this.state.visible).map((hero, index) =>
-				<div className="cards">
-					<ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-						<SuperheroFront hero={hero} index={index} handleClick={this.handleClick} />
-						<SuperheroBack hero={hero} index={index} handleClick={this.handleClick} />
-					</ReactCardFlip>
-				</div>
-				)}
+				{this.props.heroes.slice(0, this.state.visible).map((hero) => <Superhero hero={hero} />)}
 				<button type="button" onClick={this.loadMore} className="load-more">Load More</button>
             </div>
 			</>
@@ -47,4 +39,4 @@ class Superhero extends Component {
 	}
 }
 
-export default Superhero;
+export default SuperheroContainer;
