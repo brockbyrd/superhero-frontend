@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import ReactCardFlip from 'react-card-flip';
-import { VillainFront } from './VillainFront'
-import { VillainBack } from './VillainBack'
 import BootstrapNavbar from '../Navbar'
+import Villain from './Villain'
 
-class Villain extends Component {
+class VillainContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -32,18 +30,11 @@ class Villain extends Component {
 			<>
 			<BootstrapNavbar />
 			<div className="flex-container">
-				{this.props.villains.slice(0, this.state.visible).map((villain, index) =>
-				<div className="cards">
-					<ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-						<VillainFront villain={villain} index={index} handleClick={this.handleClick} />
-						<VillainBack villain={villain} index={index} handleClick={this.handleClick} />
-					</ReactCardFlip>
-				</div>
-				)}
+				{this.props.villains.slice(0, this.state.visible).map((villain) => <Villain villain={villain} />)}
 				<button type="button" onClick={this.loadMore} className="load-more">Load More</button>
             </div>
 			</>
 		)
 	}
 }
-export default Villain;
+export default VillainContainer;
