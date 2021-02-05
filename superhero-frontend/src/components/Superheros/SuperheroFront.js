@@ -18,5 +18,6 @@ const SuperheroFront = props =>
         </Card.Body>
     </Card>
 
+
 export { SuperheroFront }
 
