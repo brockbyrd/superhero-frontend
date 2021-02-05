@@ -19,11 +19,6 @@ class SuperheroContainer extends Component {
 		})
 	}
 
-	// handleClick = (e) => {
-	// 	e.preventDefault();
-	// 	this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-	// }
-
 	render(){
 		return(
 			<>
