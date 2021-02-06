@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const SuperheroBack = props =>
     <Card key={props.index} style={{ width: '14rem' }}>
@@ -12,7 +13,7 @@ const SuperheroBack = props =>
             <p>Occupation: {props.hero.occupation}</p>
             <p>Groups: {props.hero.groups}</p>
             <p>Universe: {props.hero.universe}</p>
-            <button key={props.index} onClick={props.handleClick}>Click to flip</button>
+            <Button variant="outline-success" key={props.index} onClick={props.handleClick}>Attributes</Button>{' '}
         </Card.Text>
         </Card.Body>
     </Card>

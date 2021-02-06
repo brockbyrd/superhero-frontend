@@ -1,0 +1,47 @@
+div.superheroes {
+    background-color: #00A3DB;
+}
+
+div.villains {
+    background-color: #8E0600;
+}
+
+div.card.superheroes {
+    background-color: #6EEF3B;
+}
+
+div.card-text {
+    display: flex;
+    justify-content: center;
+}
+div.card-title {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.load-more {
+    transition-duration: 0.4s;
+    border: 2px solid #282829;
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px 18px;
+}
+
+.load-more:hover {
+    background-color: #282829; /* Green */
+    color: white;
+  }
+
+
+.homepage {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.homepage:hover {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}

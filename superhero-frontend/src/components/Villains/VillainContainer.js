@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BootstrapNavbar from '../Navbar'
 import Villain from './Villain'
+import '../Characters.css'
 
 class VillainContainer extends Component {
 	constructor(props) {
@@ -22,7 +23,7 @@ class VillainContainer extends Component {
 		return(
 			<>
 			<BootstrapNavbar />
-			<div className="flex-container">
+			<div className="flex-container villains">
 				{this.props.villains.slice(0, this.state.visible).map((villain) => <Villain villain={villain} />)}
 				<button type="button" onClick={this.loadMore} className="load-more">Load More</button>
             </div>

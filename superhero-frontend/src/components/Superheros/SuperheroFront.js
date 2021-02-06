@@ -1,19 +1,18 @@
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const SuperheroFront = props =>
     <Card key={props.index} style={{ width: '14rem' }}>
-        <Card.Img variant="top" src={props.hero.image1} />
+        <Card.Img variant="top" src={props.hero.image1} style={{ borderRadius: 15, padding: '.5rem' }} />
         <Card.Body>
         <Card.Title>{props.hero.name}</Card.Title>
         <Card.Text>
-            <ul>
-                <li>Intelligence: {props.hero.intelligence}</li>
-                <li>Strength: {props.hero.strength}</li>
-                <li>Speed: {props.hero.speed}</li>
-                <li>Durability: {props.hero.durability}</li>
-                <li>Combat: {props.hero.combat}</li>
-            </ul>
-            <button key={props.index} onClick={props.handleClick}>Click to flip</button>
+                <p>Intelligence: {props.hero.intelligence}</p>
+                <p>Strength: {props.hero.strength}</p>
+                <p>Speed: {props.hero.speed}</p>
+                <p>Durability: {props.hero.durability}</p>
+                <p>Combat: {props.hero.combat}</p>
+            <Button variant="outline-success" key={props.index} onClick={props.handleClick}>More Info</Button>{' '}
         </Card.Text>
         </Card.Body>
     </Card>

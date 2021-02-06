@@ -19,7 +19,7 @@ class Superhero extends Component {
 
     render() {
         return(
-				<div className="cards" key={this.props.hero.id}>
+				<div className="cards superhero" key={this.props.hero.id}>
 					<ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
                         <SuperheroFront hero={this.props.hero} index={this.props.hero.id} handleClick={this.handleClick} />
                         <SuperheroBack hero={this.props.hero} index={this.props.hero.id} handleClick={this.handleClick} />
