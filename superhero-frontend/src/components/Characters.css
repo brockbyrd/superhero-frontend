@@ -45,3 +45,29 @@ div.card-title {
 	-webkit-filter: blur(0);
 	filter: blur(0);
 }
+
+.left-half {
+    position: relative;
+    text-align: center;
+  }
+
+.superhero-text {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.right-half {
+    position: relative;
+    text-align: center;
+  }
+
+  .villain-text {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
