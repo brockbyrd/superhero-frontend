@@ -7,11 +7,11 @@ const VillainFront = props =>
         <Card.Body>
         <Card.Title>{props.villain.name}</Card.Title>
         <Card.Text>
-                <p>Intelligence: {props.villain.intelligence}</p>
-                <p>Strength: {props.villain.strength}</p>
-                <p>Speed: {props.villain.speed}</p>
-                <p>Durability: {props.villain.durability}</p>
-                <p>Combat: {props.villain.combat}</p>
+                <p className="attributes" id="intelligence">Intelligence: {props.villain.intelligence}</p>
+                <p className="attributes" id="strength">Strength: {props.villain.strength}</p>
+                <p className="attributes" id="speed">Speed: {props.villain.speed}</p>
+                <p className="attributes" id="durability">Durability: {props.villain.durability}</p>
+                <p className="attributes" id="combat">Combat: {props.villain.combat}</p>
             <Button key={props.index} onClick={props.handleClick} variant="outline-danger">More Info</Button>{' '}
         </Card.Text>
         </Card.Body>

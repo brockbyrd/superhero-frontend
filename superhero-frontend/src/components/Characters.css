@@ -1,5 +1,12 @@
+.root{
+    display: flex;
+    height: 100vh;
+}
+
 div.superheroes {
     background-color: #00A3DB;
+    display: flex;
+    flex-basis: auto;
 }
 
 div.villains {
@@ -10,10 +17,17 @@ div.card.superheroes {
     background-color: #6EEF3B;
 }
 
+.card-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 div.card-text {
     display: flex;
-    justify-content: center;
+    flex-flow: row wrap;
 }
+
 div.card-title {
     display: flex;
     justify-content: center;

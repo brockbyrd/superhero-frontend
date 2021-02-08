@@ -7,11 +7,11 @@ const SuperheroFront = props =>
         <Card.Body>
         <Card.Title>{props.hero.name}</Card.Title>
         <Card.Text>
-                <p>Intelligence: {props.hero.intelligence}</p>
-                <p>Strength: {props.hero.strength}</p>
-                <p>Speed: {props.hero.speed}</p>
-                <p>Durability: {props.hero.durability}</p>
-                <p>Combat: {props.hero.combat}</p>
+                <p className="attributes" id="intelligence">Intelligence: {props.hero.intelligence}</p>
+                <p className="attributes" id="strength">Strength: {props.hero.strength}</p>
+                <p className="attributes" id="speed">Speed: {props.hero.speed}</p>
+                <p className="attributes" id="durability">Durability: {props.hero.durability}</p>
+                <p className="attributes" id="combat">Combat: {props.hero.combat}</p>
             <Button variant="outline-success" key={props.index} onClick={props.handleClick}>More Info</Button>{' '}
         </Card.Text>
         </Card.Body>
