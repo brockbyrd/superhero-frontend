@@ -12,8 +12,8 @@ const VillainBack = props =>
             <p className="attributes" id="weight">Weight: {props.villain.weight}</p>
             <p className="attributes" id="groups">Groups: {props.villain.groups}</p>
             <p className="attributes" id="universe">Universe: {props.villain.universe}</p>
-            <Button key={props.index} onClick={props.handleClick} variant="outline-danger">Attributes</Button>{' '}
         </Card.Text>
+            <Button key={props.index} onClick={props.handleClick} variant="outline-danger">Attributes</Button>{' '}
         </Card.Body>
     </Card>
 

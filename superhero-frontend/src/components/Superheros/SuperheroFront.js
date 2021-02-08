@@ -12,8 +12,8 @@ const SuperheroFront = props =>
                 <p className="attributes" id="speed">Speed: {props.hero.speed}</p>
                 <p className="attributes" id="durability">Durability: {props.hero.durability}</p>
                 <p className="attributes" id="combat">Combat: {props.hero.combat}</p>
-            <Button variant="outline-success" key={props.index} onClick={props.handleClick}>More Info</Button>{' '}
         </Card.Text>
+            <Button variant="outline-success" key={props.index} onClick={props.handleClick}>More Info</Button>{' '}
         </Card.Body>
     </Card>
 

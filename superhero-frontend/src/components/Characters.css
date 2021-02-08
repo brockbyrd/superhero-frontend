@@ -13,25 +13,27 @@ div.villains {
     background-color: #8E0600;
 }
 
-div.card.superheroes {
-    background-color: #6EEF3B;
-}
-
 .card-body {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-div.card-text {
+p.card-text {
     display: flex;
-    flex-flow: row wrap;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+p.attributes {
+    font-size: 12px;
 }
 
 div.card-title {
     display: flex;
     justify-content: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 

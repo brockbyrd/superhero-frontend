@@ -12,8 +12,8 @@ const VillainFront = props =>
                 <p className="attributes" id="speed">Speed: {props.villain.speed}</p>
                 <p className="attributes" id="durability">Durability: {props.villain.durability}</p>
                 <p className="attributes" id="combat">Combat: {props.villain.combat}</p>
-            <Button key={props.index} onClick={props.handleClick} variant="outline-danger">More Info</Button>{' '}
         </Card.Text>
+            <Button key={props.index} onClick={props.handleClick} variant="outline-danger">More Info</Button>{' '}
         </Card.Body>
     </Card>
 

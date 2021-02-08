@@ -13,8 +13,8 @@ const SuperheroBack = props =>
             <p className="attributes" id="occupation">Occupation: {props.hero.occupation}</p>
             <p className="attributes" id="groups">Groups: {props.hero.groups}</p>
             <p className="attributes" id="universe">Universe: {props.hero.universe}</p>
-            <Button variant="outline-success" key={props.index} onClick={props.handleClick}>Attributes</Button>{' '}
         </Card.Text>
+            <Button variant="outline-success" key={props.index} onClick={props.handleClick}>Attributes</Button>{' '}
         </Card.Body>
     </Card>
 
