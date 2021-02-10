@@ -3,6 +3,11 @@
     height: 100vh;
 }
 
+div.parent {
+    display: flex;
+    height: 100vh;
+}
+
 div.superheroes {
     background-color: #00A3DB;
     display: flex;
@@ -67,10 +72,17 @@ div.card-title {
 	filter: blur(3px);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
+    -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 }
 .homepage:hover {
 	-webkit-filter: blur(0);
 	filter: blur(0);
+    -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+
 }
 
 .left-half {
