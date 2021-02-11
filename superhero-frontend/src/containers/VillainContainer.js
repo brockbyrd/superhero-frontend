@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BootstrapNavbar from '../Navbar'
-import Villain from './Villain'
+import BootstrapNavbar from '../components/Navbar'
+import Villain from '../components/Villain'
 import '../Characters.css'
 
 class VillainContainer extends Component {

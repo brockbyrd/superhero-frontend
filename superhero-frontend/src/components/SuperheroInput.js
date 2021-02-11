@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import addCharacter from '.../actions/addCharacter';
 
 
 class SuperheroInput extends Component {
@@ -101,4 +99,4 @@ class SuperheroInput extends Component {
     }
 }
 
-export default connect(null, { addCharacter })(SuperheroInput);
+export default SuperheroInput;

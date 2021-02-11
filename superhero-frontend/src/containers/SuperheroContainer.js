@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import BootstrapNavbar from '../Navbar'
-import Superhero from './Superhero'
-import SuperheroInput from './SuperheroInput'
+import BootstrapNavbar from '../components/Navbar'
+import Superhero from '../components/Superhero'
+import SuperheroInput from '../components/SuperheroInput'
 import '../Characters.css'
 import { connect } from 'react-redux'
+import addCharacter from '../actions/addCharacter';
 
 
 class SuperheroContainer extends Component {
@@ -36,4 +37,4 @@ class SuperheroContainer extends Component {
 	}
 }
 
-export default SuperheroContainer;
+export default connect(null, {addCharacter})(SuperheroContainer);
