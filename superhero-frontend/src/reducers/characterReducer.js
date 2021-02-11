@@ -15,7 +15,18 @@ const characterReducer = (state = { characters: [], loading: false }, action) =>
                 loading: false
             }
 
+        case "UPDATE_CHARACTERS":
+            return{
+                ...state,
+                characters: [...state.characters],
+                loading: true
+            }
 
+        case "NEW_CHARACTER":
+             return {
+                 characters: state.characters.concat(action.character),
+                 loading: false
+             }
 
         default:
             return state;
