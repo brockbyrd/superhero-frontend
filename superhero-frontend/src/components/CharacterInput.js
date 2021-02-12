@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import addCharacter from '../actions/addCharacter'
 
 
-class SuperheroInput extends Component {
+class CharacterInput extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +19,7 @@ class SuperheroInput extends Component {
             height: '',
             weight: '',
             fullName: '',
-            alignment: 'good',
+            alignment: '',
             occupation: '',
             groups: '',
             universe: '',
@@ -33,7 +35,7 @@ class SuperheroInput extends Component {
 
     handleOnSubmit(event){
         event.preventDefault();
-        this.props.addHero(this.state);
+        this.props.addCharacter(this.state);
         this.setState({
             name: '',
             intelligence: '',
@@ -47,7 +49,7 @@ class SuperheroInput extends Component {
             height: '',
             weight: '',
             fullName: '',
-            alignment: 'good',
+            alignment: '',
             occupation: '',
             groups: '',
             universe: '',
@@ -83,6 +85,11 @@ class SuperheroInput extends Component {
                     <input type="text" name='height' value={this.state.height} onChange={(event) => this.handleOnChange(event)} />
                     <label for="weight">Weight: </label>
                     <input type="text" name='weight' value={this.state.weight} onChange={(event) => this.handleOnChange(event)} />
+                    <label for="occupation">Alignment: </label>
+                    <select name="alignment" value={this.state.alignment} onChange={(event) => this.handleOnChange(event)}>
+                        <option value="good">Good</option>
+                        <option value="bad">Evil</option>
+                    </select>
                     <label for="occupation">Occupation: </label>
                     <input type="text" name='occupation' value={this.state.occupation} onChange={(event) => this.handleOnChange(event)} />
                     <label for="groups">Groups: </label>
@@ -99,4 +106,4 @@ class SuperheroInput extends Component {
     }
 }
 
-export default SuperheroInput;
+export default connect(null, { addCharacter })(CharacterInput);

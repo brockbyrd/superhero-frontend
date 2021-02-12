@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import BootstrapNavbar from '../components/Navbar'
 import Superhero from '../components/Superhero'
-import SuperheroInput from '../components/SuperheroInput'
 import '../Characters.css'
-import { connect } from 'react-redux'
-import addCharacter from '../actions/addCharacter';
 
 
 class SuperheroContainer extends Component {
@@ -30,11 +27,10 @@ class SuperheroContainer extends Component {
 			<div className="flex-container superheroes">
 				{this.props.heroes.slice(0, this.state.visible).map((hero) => <Superhero hero={hero} />)}
 				<button type="button" onClick={this.loadMore} className="load-more">Load More</button>
-				<SuperheroInput addHero={this.props.addCharacter}/>
             </div>
 			</>
 		)
 	}
 }
 
-export default connect(null, {addCharacter})(SuperheroContainer);
+export default SuperheroContainer;

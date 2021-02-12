@@ -6,6 +6,7 @@ import Homepage from './components/Homepage'
 import Superhero from './containers/SuperheroContainer'
 import Villain from './containers/VillainContainer'
 import { Route } from 'react-router-dom'
+import CharacterInput from './components/CharacterInput'
 
 class App extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class App extends Component {
         <Route exact path='/' render={() => ( <Homepage characters={this.props.characters} filterEvil={this.filterEvil} filterGood={this.filterGood} />)} />
         <Route path='/superheroes' render={() => ( <Superhero heroes={this.state.heroes} />)} />
         <Route path='/villains' render={() => ( <Villain villains={this.state.villains} />)}/>
+        <Route path='/create' render={() => ( <CharacterInput />)} />
       </div>
     )
   }

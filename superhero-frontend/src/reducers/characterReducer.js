@@ -23,10 +23,10 @@ const characterReducer = (state = { characters: [], loading: false }, action) =>
             }
 
         case "NEW_CHARACTER":
-             return {
-                 characters: state.characters.concat(action.character),
-                 loading: false
-             }
+            return {
+                characters: state.characters.concat(action.payload),
+                loading: false
+            }
 
         default:
             return state;

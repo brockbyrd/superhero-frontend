@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import '../App.css'
+import Navbar from './Navbar'
 
 class Homepage extends Component {
 
 	render(){
 		return(
             <div className="parent">
+                <Navbar />
                 <Route render={({ history }) => (
                     <div className="leftHalf" onClick={() => history.push('/superheroes')}>
                         <img className="homepage" src="https://www.wallpapertip.com/wmimgs/35-357728_all-superheroes-wallpaper.jpg" alt="" onClick={this.props.filterGood} />

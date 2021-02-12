@@ -10,7 +10,7 @@ const addCharacter = (character) => {
         })
         .then(response => response.json())
         .then(character => {
-            return dispatch({ type:'NEW_CHARACTER', character: character })
+            return dispatch({ type:'NEW_CHARACTER', payload: character })
         })
     }
 }
