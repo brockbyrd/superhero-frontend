@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import addCharacter from '../actions/addCharacter'
+import Navbar from './Navbar'
 
 
 class CharacterInput extends Component {
@@ -61,6 +62,7 @@ class CharacterInput extends Component {
     render(){
         return(
             <div>
+                <Navbar />
                 <h1>Create Your Own Superhero</h1>
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
                     <label for="name">Name: </label>
