@@ -20,6 +20,7 @@ class VillainContainer extends Component {
 	}
 
 	render(){
+		console.log(this.state)
 		return(
 			<>
 			<BootstrapNavbar />
@@ -31,4 +32,5 @@ class VillainContainer extends Component {
 		)
 	}
 }
+
 export default VillainContainer;

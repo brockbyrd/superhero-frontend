@@ -3,8 +3,8 @@ import './App.css'
 import { fetchCharacters } from './actions/characterActions'
 import { connect } from 'react-redux'
 import Homepage from './components/Homepage'
-import Superhero from './containers/SuperheroContainer'
-import Villain from './containers/VillainContainer'
+import SuperheroContainer from './containers/SuperheroContainer'
+import VillainContainer from './containers/VillainContainer'
 import { Route } from 'react-router-dom'
 import CharacterInput from './components/CharacterInput'
 
@@ -21,28 +21,12 @@ class App extends Component {
     this.props.fetchCharacters();
   }
 
-    filterGood = () => {
-      let heroes = this.props.characters
-      heroes = heroes.filter((char) =>
-        char.alignment === 'good'
-      )
-      this.setState({ heroes: heroes })
-    }
-
-    filterEvil = () => {
-      let villains = this.props.characters
-      villains = villains.filter((char) =>
-      char.alignment === 'bad'
-      )
-      this.setState({ villains: villains })
-    }
-
   render() {
     return(
       <div>
-        <Route exact path='/' render={() => ( <Homepage characters={this.props.characters} filterEvil={this.filterEvil} filterGood={this.filterGood} />)} />
-        <Route path='/superheroes' render={() => ( <Superhero heroes={this.state.heroes} />)} />
-        <Route path='/villains' render={() => ( <Villain villains={this.state.villains} />)}/>
+        <Route exact path='/' render={() => ( <Homepage /> )} />
+        <Route path='/superheroes' render={() => ( <SuperheroContainer heroes={this.props.heroes} />)} />
+        <Route path='/villains' render={() => ( <VillainContainer villains={this.props.villains} />)}/>
         <Route path='/create' render={() => ( <CharacterInput />)} />
       </div>
     )
@@ -52,7 +36,11 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     characters: state.characters,
-    loading: state.loading
+    loading: state.loading,
+    heroes: state.characters.filter((char) =>
+    char.alignment === 'good'),
+    villains: state.characters.filter((char) =>
+    char.alignment === 'bad')
   }
 }
 

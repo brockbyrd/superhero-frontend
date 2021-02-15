@@ -11,7 +11,7 @@ class Homepage extends Component {
                 <Navbar />
                 <Route render={({ history }) => (
                     <div className="leftHalf" onClick={() => history.push('/superheroes')}>
-                        <img className="homepage" src="https://www.wallpapertip.com/wmimgs/35-357728_all-superheroes-wallpaper.jpg" alt="" onClick={this.props.filterGood} />
+                        <img className="homepage" src="https://www.wallpapertip.com/wmimgs/35-357728_all-superheroes-wallpaper.jpg" alt=""/>
                         <h2 className="superhero-text">Superheroes</h2>
                     </div>
                     )}
@@ -19,7 +19,7 @@ class Homepage extends Component {
 
                 <Route render={({ history }) => (
                     <div className="rightHalf" onClick={() => history.push('/villains')} >
-                        <img className="homepage" src="https://wallpaperaccess.com/full/783564.jpg" alt="" onClick={this.props.filterEvil} />
+                        <img className="homepage" src="https://wallpaperaccess.com/full/783564.jpg" alt="" />
                         <h2 className="villain-text">Villains</h2>
                     </div>
                     )}

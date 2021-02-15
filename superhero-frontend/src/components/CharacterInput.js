@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import addCharacter from '../actions/addCharacter'
 import Navbar from './Navbar'
 
@@ -24,7 +25,8 @@ class CharacterInput extends Component {
             occupation: '',
             groups: '',
             universe: '',
-            image1: ''
+            image1: '',
+            submitted: false
         }
     }
 
@@ -37,6 +39,7 @@ class CharacterInput extends Component {
     handleOnSubmit(event){
         event.preventDefault();
         this.props.addCharacter(this.state);
+        //this.state.alignment === good redirect to Superhero otherwise redirect to Villains
         this.setState({
             name: '',
             intelligence: '',
@@ -54,16 +57,27 @@ class CharacterInput extends Component {
             occupation: '',
             groups: '',
             universe: '',
-            image1: ''
+            image1: '',
+            submitted: true
         })
     }
 
-
     render(){
+        let submitted = this.state.submitted
+        let alignment = this.state.alignment
         return(
-            <div>
+            <>
+            {submitted ?
+            <Redirect
+            to={{
+                pathname: alignment === 'good' ? '/superheroes' : '/villains',
+                state: { visible2: 500 }}
+            }/>
+            :
+
+                <div>
                 <Navbar />
-                <h1>Create Your Own Superhero</h1>
+                <h1>Create Your Superhero or Villain</h1>
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
                     <label for="name">Name: </label>
                     <input type="text" name='name' value={this.state.name} onChange={(event) => this.handleOnChange(event)} />
@@ -104,8 +118,14 @@ class CharacterInput extends Component {
                     <input type="submit" />
                 </form>
             </div>
+            }
+            </>
         )
     }
 }
+
+// after submit go to respective page
+
+// after form submit show all characters
 
 export default connect(null, { addCharacter })(CharacterInput);

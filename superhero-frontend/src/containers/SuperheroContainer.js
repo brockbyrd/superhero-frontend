@@ -21,6 +21,8 @@ class SuperheroContainer extends Component {
 	}
 
 	render(){
+		// debugger;
+		console.log(this.state)
 		return(
 			<>
 			<BootstrapNavbar />
