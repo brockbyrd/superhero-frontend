@@ -2,8 +2,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const VillainFront = props =>
-    <Card key={props.index} style={{ width: '14rem' }}>
-        <Card.Img variant="top" src={props.villain.image1} style={{ borderRadius: 15, padding: '.5rem' }} />
+    <Card key={props.index} style={{ width: '16rem', height: '36rem' }}>
+        <Card.Img variant="top" src={props.villain.image1} style={{ borderRadius: 15, padding: '.5rem', height: '20rem' }} />
         <Card.Body>
         <Card.Title>{props.villain.name}</Card.Title>
         <Card.Text>

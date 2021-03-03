@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const VillainBack = props =>
-    <Card key={props.index} style={{ width: '14rem' }}>
+    <Card key={props.index} style={{ width: '16rem', height: '36rem' }}>
         <Card.Body>
         <Card.Title>{props.villain.fullName}</Card.Title>
         <Card.Text>
