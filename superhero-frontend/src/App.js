@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Homepage from './components/Homepage'
 import SuperheroContainer from './containers/SuperheroContainer'
 import VillainContainer from './containers/VillainContainer'
+import DeckContainer from './containers/DeckContainer'
 import { Route } from 'react-router-dom'
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
         <Route exact path='/' render={() => ( <Homepage /> )} />
         <Route path='/superheroes' render={() => ( <SuperheroContainer heroes={this.props.heroes} />)} />
         <Route path='/villains' render={() => ( <VillainContainer villains={this.props.villains} />)}/>
+        <Route path='/deck' render={() => ( <DeckContainer />)} />
       </div>
     )
   }

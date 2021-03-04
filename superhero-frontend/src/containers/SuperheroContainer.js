@@ -23,11 +23,11 @@ class SuperheroContainer extends Component {
 	render(){
 		return(
 			<>
-			<BootstrapNavbar />
-			<div className="flex-container superheroes">
-				{this.props.heroes.slice(0, this.state.visible).map((hero) => <Superhero hero={hero} />)}
-				<button type="button" onClick={this.loadMore} className="load-more">Load More</button>
-            </div>
+				<BootstrapNavbar />
+				<div className="flex-container superheroes">
+					{this.props.heroes.slice(0, this.state.visible).map((hero) => <Superhero hero={hero} />)}
+					<button type="button" onClick={this.loadMore} className="load-more">Load More</button>
+				</div>
 			</>
 		)
 	}
