@@ -6,7 +6,7 @@ const VillainFront = props =>
         <Card.Img variant="top" src={props.villain.image1} style={{ borderRadius: 15, padding: '.5rem', height: '20rem' }} />
         <Card.Body>
         <Card.Title>{props.villain.name}</Card.Title>
-        <Card.Text>
+        <Card.Text style={{ flex: 1, flexDirection: 'row', alignItems: 'stretch', justifyContent: 'space-around' }}>
                 <p className="attributes" id="intelligence">Intelligence: {props.villain.intelligence}</p>
                 <p className="attributes" id="strength">Strength: {props.villain.strength}</p>
                 <p className="attributes" id="speed">Speed: {props.villain.speed}</p>

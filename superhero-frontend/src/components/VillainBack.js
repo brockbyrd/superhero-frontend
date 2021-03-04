@@ -3,9 +3,9 @@ import Button from 'react-bootstrap/Button';
 
 const VillainBack = props =>
     <Card key={props.index} style={{ width: '16rem', height: '36rem' }}>
-        <Card.Body>
-        <Card.Title>{props.villain.fullName}</Card.Title>
-        <Card.Text>
+        <Card.Body style={{ flex: 1, flexDirection: 'column' }}>
+        <Card.Title style={{ justifyContent: 'center' }}>{props.villain.fullName}</Card.Title>
+        <Card.Text style={{ flex: 1, flexDirection: 'column', alignItems: 'stretch', justifyContent: 'space-between' }}>
             <p className="attributes" id="race">Race: {props.villain.race}</p>
             <p className="attributes" id="gender">Gender: {props.villain.gender}</p>
             <p className="attributes" id="height">Height: {props.villain.height}</p>
